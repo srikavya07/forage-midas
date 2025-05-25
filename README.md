@@ -1,21 +1,42 @@
-# Forage Midas Core (Java + Spring Boot)
+Forage Midas Core Project
 
-This is my completed solution for the JPMorgan Chase Forage Midas Core virtual experience program. The project involves building a transaction processing system with:
+This repository contains my completed solution for the JPMorgan Chase Midas Core virtual experience hosted on Forage. The project simulates a real-world core banking system that processes transactions using event-driven architecture.
 
-- ✅ Kafka integration
-- ✅ H2 database with Spring Data JPA
-- ✅ Incentive API integration (external JAR)
-- ✅ REST endpoint for querying user balances
+🚀 Project Overview
 
-## Tasks Completed
-1. Transaction validation and processing
-2. Kafka Listener integration
-3. Incentive API (via `/incentive` POST call)
-4. `/balance` GET API exposed on port 33400
+The goal of this project is to implement a backend system that:
 
-## Tech Stack
-- Java 17
-- Spring Boot
-- Kafka
-- H2 Database
-- RestTemplate
+Processes user transactions using Apache Kafka
+
+Interacts with an external Incentive API
+
+Stores user data and transaction history using an H2 in-memory database
+
+Exposes a REST API to retrieve user balances
+
+🔧 Technologies Used
+
+Java 17
+
+Spring Boot
+
+Apache Kafka
+
+H2 Database
+
+Spring Data JPA
+
+REST API (via Spring Web)
+
+✅ Features Implemented
+
+Transaction Listener: Listens to a Kafka topic for new transaction messages.
+
+Validation & Persistence: Validates incoming transactions and stores valid ones.
+
+Incentive API Integration: Sends transaction data to an external service and applies returned incentive amount to the recipient's balance.
+
+User Balance Endpoint: Exposes a GET /balance?userId=X endpoint that returns the user's balance.
+
+Custom Port: The application runs on port 33400.
+
