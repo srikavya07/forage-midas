@@ -40,3 +40,24 @@ User Balance Endpoint: Exposes a GET /balance?userId=X endpoint that returns the
 
 Custom Port: The application runs on port 33400.
 
+📁 Project Structure
+├── src/main/java/com/jpmc/midascore
+│   ├── component         # Business logic (TransactionHandler, DatabaseConduit)
+│   ├── controller        # REST controllers (BalanceController)
+│   ├── entity            # Entity classes (UserRecord, etc.)
+│   ├── foundation        # Domain models (Transaction, Incentive, Balance)
+│   └── MidasCoreApplication.java
+├── src/test/java        # Task test classes (TaskOneTests, TaskFiveTests, etc.)
+├── services             # External Incentive API JAR (runs on port 8080)
+└── application.properties
+
+▶️ Running the Project
+1. Start the Incentive API JAR:
+cd services
+java -jar incentives-api.jar
+
+2.Run the main Spring Boot application:
+./mvnw spring-boot:run
+
+3.Access the balance endpoint:
+GET http://localhost:33400/balance?userId=5
